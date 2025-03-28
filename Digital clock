@@ -1,0 +1,38 @@
+//Digital clock
+import javax.swing.*;
+import java.awt.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DigitalClock extends JFrame {
+    private JLabel clockLabel;
+
+    public DigitalClock() {
+        // Setting up the clock window
+        setTitle("Digital Clock");
+        setSize(400, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
+
+        // Adding the clock label
+        clockLabel = new JLabel("", SwingConstants.CENTER);
+        clockLabel.setFont(new Font("Arial", Font.BOLD, 50));
+        add(clockLabel, BorderLayout.CENTER);
+
+        // Start the clock
+        updateClock();
+        setVisible(true);
+    }
+
+    private void updateClock() {
+        Timer timer = new Timer(1000, e -> {
+            String time = new SimpleDateFormat("HH:mm:ss").format(new Date());
+            clockLabel.setText(time);
+        });
+        timer.start();
+    }
+
+    public static void main(String[] args) {
+        // Launching the clock
+        SwingUtilities.invokeLater(DigitalClock::new);
+    } }
