@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+
+
+<VBox spacing="10"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.devhelper.app.controllers.ContactController">
+
+    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+
+    <Label text=" Team Contact Directory"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <Label text="Your team, fetched from the database. Click a column header to sort."/>
+
+
+    <TableView fx:id="contactTable" VBox.vgrow="ALWAYS">
+        <columns>
+
+            <TableColumn fx:id="nameColumn"  text="Name"  prefWidth="180"/>
+            <TableColumn fx:id="roleColumn"  text="Role"  prefWidth="180"/>
+            <TableColumn fx:id="emailColumn" text="Email" prefWidth="250"/>
+        </columns>
+
+
+        <placeholder>
+            <Label text="No contacts found. Add some rows to the contacts table in MySQL."/>
+        </placeholder>
+    </TableView>
+
+</VBox>

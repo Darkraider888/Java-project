@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+
+
+<VBox spacing="10"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.devhelper.app.controllers.SnippetController">
+
+    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+
+    <Label text="💾 Code Snippet Saver"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <Label text="Paste or type a useful code snippet below, then click Save."/>
+
+
+
+    <TextArea fx:id="snippetTextArea"
+              promptText="// Paste your code snippet here..."
+              prefRowCount="5"
+              wrapText="true"
+              style="-fx-font-family: monospace;"/>
+
+    <Button text="Save Snippet" onAction="#handleSaveSnippet"/>
+
+    <Separator/>
+
+    <Label text="Previously Saved Snippets (newest first):"
+           style="-fx-font-weight: bold;"/>
+
+    <ListView fx:id="savedSnippetsList"
+              VBox.vgrow="ALWAYS"
+              style="-fx-font-family: monospace;"/>
+
+</VBox>

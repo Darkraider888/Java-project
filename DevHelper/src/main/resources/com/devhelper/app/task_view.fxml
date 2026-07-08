@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox spacing="10"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.devhelper.app.controllers.TaskController">
+
+
+    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+
+    <Label text="To-Do Checklist"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <Label text="Check a task to mark it done. Add new tasks below."/>
+
+
+    <HBox spacing="8">
+
+        <TextField fx:id="newTaskField"
+                   promptText="Type a new task and click Add..."
+                   HBox.hgrow="ALWAYS"/>
+
+        <Button text="＋ Add Task" onAction="#handleAddTask"/>
+    </HBox>
+
+    <ListView fx:id="taskListView" VBox.vgrow="ALWAYS"/>
+
+</VBox>

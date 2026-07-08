@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox spacing="10"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.devhelper.app.controllers.LinkController">
+
+    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+
+    <Label text="🔗 Useful Links Manager"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <Label text="Add important URLs below. Double-click any link to open it in your browser."/>
+
+    <HBox spacing="8">
+
+        <TextField fx:id="linkTitleField"
+                   promptText="Title (e.g. Project Docs)"
+                   prefWidth="200"/>
+
+        <TextField fx:id="linkUrlField"
+                   promptText="URL (e.g. https://...)"
+                   HBox.hgrow="ALWAYS"/>
+
+        <Button text="＋ Add Link" onAction="#handleAddLink"/>
+    </HBox>
+
+    <Separator/>
+
+    <Label text="Saved Links (double-click to open):"
+           style="-fx-font-weight: bold;"/>
+
+    <ListView fx:id="linkListView" VBox.vgrow="ALWAYS"/>
+
+</VBox>

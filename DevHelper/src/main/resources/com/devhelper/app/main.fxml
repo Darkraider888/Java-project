@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+
+<!--
+  main.fxml — the app's home screen
+  ───────────────────────────────────
+  A TabPane lets the user click between tabs to switch screens.
+  <fx:include source="..."/> pulls in an existing FXML file as-is,
+  along with its controller — no extra Java code needed.
+-->
+<TabPane xmlns:fx="http://javafx.com/fxml"
+         tabClosingPolicy="UNAVAILABLE">
+
+    <Tab text="📋 Tasks">
+        <fx:include source="task_view.fxml"/>
+    </Tab>
+
+    <Tab text="👥 Contacts">
+        <fx:include source="contact_view.fxml"/>
+    </Tab>
+
+    <Tab text="💾 Snippets">
+        <fx:include source="snippet_view.fxml"/>
+    </Tab>
+
+    <Tab text="📝 Progress">
+        <fx:include source="progress_view.fxml"/>
+    </Tab>
+
+    <Tab text="🔗 Links">
+        <fx:include source="link_view.fxml"/>
+    </Tab>
+
+</TabPane>

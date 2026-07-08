@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+
+<VBox spacing="10"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.devhelper.app.controllers.ProgressController">
+
+    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+
+    <Label text="Daily Progress Logger"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <Label text="Write what you worked on today, then click Log It. The date is saved automatically."/>
+
+
+    <TextArea fx:id="progressTextArea"
+              promptText="What did you work on today?"
+              prefRowCount="4"
+              wrapText="true"/>
+
+
+    <Button text="📝 Log It" onAction="#handleSaveLog"/>
+
+    <Separator/>
+
+    <Label text="Previous Logs (newest first):"
+           style="-fx-font-weight: bold;"/>
+
+
+    <ListView fx:id="historyListView" VBox.vgrow="ALWAYS"/>
+
+</VBox>
